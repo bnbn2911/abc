@@ -2,18 +2,18 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fefaf6;
-  color: #2d2d2d;
+  background: #ffffff;
+  color: #111111;
   line-height: 1.6;
 }
 
 /* Header */
 header.topnav {
-  background-color: #ffb703;
-  color: #1d1d1d;
+  background-color: #000000;
+  color: #ffffff;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -38,72 +38,63 @@ header h1 {
 
 .card {
   background: #ffffff;
-  border-radius: 16px;
+  border: 2px solid #000000;
+  border-radius: 10px;
   padding: 1.5rem;
   flex: 1 1 300px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
   margin-top: 0;
   font-size: 1.3rem;
-  color: #333;
+  color: #000000;
 }
 
 .reading {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #219ebc;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
   margin: 1rem 0;
 }
 
 .gray-label {
-  color: #6c757d;
-  font-size: 0.95rem;
+  color: #555555;
+  font-size: 0.9rem;
 }
 
 /* Buttons */
 button {
   padding: 0.75rem 1.4rem;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid #000000;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  font-weight: 500;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.04);
+  background-color: #000000;
+  color: #ffffff;
 }
 
-/* Custom Button Colors */
-.connectButton {
-  background-color: #8ecae6;
-  color: #1d1d1d;
-}
-
-.disconnectButton {
-  background-color: #e07a5f;
-  color: #fff;
-}
-
-.onButton {
-  background-color: #81b29a;
-  color: #fff;
-}
-
+/* Specific Buttons (still in black/white style) */
+.connectButton,
+.disconnectButton,
+.onButton,
 .offButton {
-  background-color: #f28482;
-  color: #fff;
+  /* Same style for all to keep it bold & minimal */
 }
 
+/* Button Row */
 .button-row {
   display: flex;
   gap: 1rem;
@@ -116,9 +107,9 @@ button:hover {
 }
 
 .status.connected {
-  color: #40916c;
+  color: #008000; /* green */
 }
 
 .status.disconnected {
-  color: #e63946;
+  color: #ff0000; /* red */
 }
