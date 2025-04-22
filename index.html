@@ -29,200 +29,130 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* Soft cold gradient */
+  color: #2c3e50; /* Muted cold text */
+  line-height: 1.6;
+}
 
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+/* Header */
+header.topnav {
+  background: linear-gradient(90deg, #5d6d7e, #3a506b); /* Blue-grey gradient */
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
-        header {
-            background-color: var(--black);
-            color: var(--white);
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
 
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
+/* Main Content */
+.content {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-        .content {
-            flex: 1;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
+/* Card Grid */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
+.card {
+  background: linear-gradient(160deg, #eaf2f8, #d6e0eb); /* Soft dynamic blue-gray */
+  border-radius: 16px;
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.75rem;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid var(--medium-gray);
-        }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+}
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--dark-gray);
-        }
+h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #2f4558;
+}
 
-        .card-header {
-            margin-bottom: 1.5rem;
-        }
+.reading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #3f7cac; /* Cold steel blue */
+  margin: 1rem 0;
+}
 
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--black);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+.gray-label {
+  color: #6b7a89;
+  font-size: 0.95rem;
+}
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--black);
-            border-radius: 50%;
-        }
+/* Buttons */
+button {
+  padding: 0.75rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .value-display {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--black);
-            margin: 1rem 0;
-            font-feature-settings: "tnum";
-            font-variant-numeric: tabular-nums;
-        }
+button:hover {
+  transform: scale(1.05);
+}
 
-        .meta-info {
-            color: var(--text-gray);
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
+/* Custom Button Colors */
+.connectButton {
+  background-color: #6a9fb5; /* Steel blue */
+  color: #ffffff;
+}
 
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
+.disconnectButton {
+  background-color: #556b7f; /* Blue-gray */
+  color: #ffffff;
+}
 
-        .btn {
-            border: none;
-            border-radius: 8px;
-            padding: 0.875rem 1.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            flex: 1;
-            min-width: 120px;
-            text-align: center;
-        }
+.onButton {
+  background-color: #4f6d7a; /* Cool dark slate */
+  color: #fff;
+}
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
+.offButton {
+  background-color: #9fb5c7; /* Light bluish-gray */
+  color: #2c3e50;
+}
 
-        .btn:active {
-            transform: translateY(0);
-        }
+.button-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-        .btn-connect {
-            background-color: var(--black);
-            color: var(--white);
-        }
+/* BLE Status */
+.status {
+  font-weight: bold;
+}
 
-        .btn-disconnect {
-            background-color: var(--dark-gray);
-            color: var(--white);
-        }
+.status.connected {
+  color: #2a9d8f; /* Teal green */
+}
 
-        .btn-on {
-            background-color: var(--black);
-            color: var(--white);
-        }
-
-        .btn-off {
-            background-color: var(--dark-gray);
-            color: var(--white);
-        }
-
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            letter-spacing: 0.5px;
-        }
-
-        .status-indicator::before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--text-gray);
-        }
-
-        .status-indicator.connected::before {
-            background-color: var(--black);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .value-update {
-            animation: pulse 0.5s ease;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 1.5rem;
-            }
-            
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn {
-                min-width: 100%;
-            }
-        }
+.status.disconnected {
+  color: #c44545; /* Crimson but slightly muted */
+}
     </style>
 </head>
 <body>
