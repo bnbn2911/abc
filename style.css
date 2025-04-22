@@ -1,47 +1,29 @@
 /* Global Styles */
-:root {
-  --pure-white: #ffffff;
-  --pure-black: #000000;
-  --light-gray: #f8f8f8;
-  --medium-gray: #e0e0e0;
-  --dark-gray: #333333;
-  --text-gray: #555555;
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.1);
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--light-gray);
-  color: var(--dark-gray);
+  font-family: 'Inter', sans-serif;
+  background: #f0f4f8; /* Light cool background */
+  color: #1e2a38; /* Deep gray-blue text */
   line-height: 1.6;
 }
 
 /* Header */
 header.topnav {
-  background-color: var(--pure-black);
-  color: var(--pure-white);
-  padding: 1.25rem;
+  background-color: #3a506b; /* Cool navy */
+  color: #ffffff;
+  padding: 1rem;
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
 }
 
 /* Main Content */
 .content {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -50,161 +32,93 @@ header h1 {
 .card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: var(--pure-white);
-  border-radius: 12px;
-  padding: 1.75rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
   flex: 1 1 300px;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  border: 1px solid var(--medium-gray);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--dark-gray);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  margin: 0 0 1.25rem 0;
+  margin-top: 0;
   font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--pure-black);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-h2::before {
-  content: "•";
-  color: var(--dark-gray);
-  font-size: 1.8rem;
-  line-height: 0;
+  color: #2b3a4b;
 }
 
 .reading {
   font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--pure-black);
+  font-weight: 600;
+  color: #5dade2; /* Icy blue */
   margin: 1rem 0;
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
 }
 
 .gray-label {
-  color: var(--text-gray);
+  color: #7a8b99;
   font-size: 0.95rem;
-  letter-spacing: 0.2px;
 }
 
 /* Buttons */
 button {
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.4rem;
   border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.2s ease, background-color 0.2s ease;
   font-weight: 500;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: scale(1.04);
 }
 
-/* Custom Button Styles */
+/* Custom Button Colors */
 .connectButton {
-  background-color: var(--pure-black);
-  color: var(--pure-white);
+  background-color: #74a9cf; /* Steel blue */
+  color: #ffffff;
 }
 
 .disconnectButton {
-  background-color: var(--dark-gray);
-  color: var(--pure-white);
+  background-color: #4b5d67; /* Dark gray-blue */
+  color: #ffffff;
 }
 
 .onButton {
-  background-color: var(--pure-black);
-  color: var(--pure-white);
+  background-color: #6c91bf; /* Muted blue */
+  color: #fff;
 }
 
 .offButton {
-  background-color: var(--dark-gray);
-  color: var(--pure-white);
+  background-color: #9db4c0; /* Frosty gray-blue */
+  color: #1e2a38;
 }
 
 .button-row {
   display: flex;
   gap: 1rem;
-  margin: 1.5rem 0 0.5rem 0;
+  margin-top: 1rem;
 }
 
-/* Status Indicators */
+/* BLE Status */
 .status {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
+  font-weight: bold;
 }
 
 .status.connected {
-  color: var(--pure-black);
+  color: #2a9d8f; /* Cool teal */
 }
 
 .status.disconnected {
-  color: var(--text-gray);
-}
-
-/* Value Animation */
-@keyframes valuePulse {
-  0% { opacity: 0.8; transform: scale(0.98); }
-  50% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0.8; transform: scale(0.98); }
-}
-
-.value-update {
-  animation: valuePulse 1.5s ease-in-out infinite;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .content {
-    padding: 1.5rem 1rem;
-  }
-  
-  .card {
-    padding: 1.5rem;
-  }
-  
-  .reading {
-    font-size: 2rem;
-  }
-  
-  button {
-    padding: 0.7rem 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  
-  .button-row {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  button {
-    width: 100%;
-  }
+  color: #b22234; /* Cool crimson */
 }
