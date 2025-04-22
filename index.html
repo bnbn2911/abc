@@ -1,43 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ESP32 Web BLE App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <title>ESP32 Web BLE App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.ico">
 </head>
 <body>
-    <div class="topnav">
-        <h1>BLE Controller</h1>
-    </div>
-    <div class="content">
-        <div class="card-grid">
-            <div class="card connection-card">
-                <p class="button-group">
-                    <button id="connectBleButton" class="btn connectButton">Connect to BLE Device</button>
-                    <button id="disconnectBleButton" class="btn disconnectButton">Disconnect</button>
-                </p>
-                <p class="status-label">BLE state: <span id="bleState" class="state disconnected">Disconnected</span></p>
-            </div>
-        </div>
-        <div class="card-grid">
-            <div class="card data-card">
-                <h2><i class="icon">📶</i> Fetched Value</h2>
-                <p class="reading"><span id="valueContainer" class="value-display">NaN</span></p>
-                <p class="meta-info">Last reading: <span id="timestamp" class="timestamp">-</span></p>
-            </div>
+  <header class="topnav">
+    <h1>ESP32 Web BLE Application</h1>
+  </header>
 
-            <div class="card control-card">
-                <h2><i class="icon">⚙️</i> Control GPIO 2</h2>
-                <div class="button-group">
-                    <button id="onButton" class="btn onButton">ON</button>
-                    <button id="offButton" class="btn offButton">OFF</button>
-                </div>
-                <p class="meta-info">Last value sent: <span id="valueSent" class="sent-value">-</span></p>
-            </div>
+  <main class="content">
+    <section class="card-grid">
+      <div class="card">
+        <p>
+          <button id="connectBleButton" class="connectButton">Connect to BLE Device</button>
+          <button id="disconnectBleButton" class="disconnectButton">Disconnect BLE Device</button>
+        </p>
+        <p class="gray-label">BLE state: <strong><span id="bleState" class="status">Disconnected</span></strong></p>
+      </div>
+    </section>
+
+    <section class="card-grid">
+      <div class="card">
+        <h2>Fetched Value</h2>
+        <p class="reading"><span id="valueContainer">NaN</span></p>
+        <p class="gray-label">Last reading: <span id="timestamp"></span></p>
+      </div>
+
+      <div class="card">
+        <h2>Control GPIO 2</h2>
+        <div class="button-row">
+          <button id="onButton" class="onButton">ON</button>
+          <button id="offButton" class="offButton">OFF</button>
         </div>
-    </div>
-    <script src="script.js"></script>
+        <p class="gray-label">Last value sent: <span id="valueSent"></span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
